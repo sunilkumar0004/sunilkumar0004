@@ -1,38 +1,57 @@
-name: generate animation
+name: Generate Futuristic Contribution Snake
 
 on:
-  # Run automatically every 24 hours
+  # Schedule auto-update every 12 hours
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */12 * * *"
   
-  # Allows to manually run the job at any time
+  # Allows manual execution from the Actions tab
   workflow_dispatch:
   
-  # Run on every push on the main branch
+  # Run automatically when pushing changes to main
   push:
     branches:
-    - main
+      - main
 
 jobs:
   generate:
     permissions: 
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
-      # Generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
-      - name: generate github-contribution-grid-snake.svg
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 1. Generate 2D Neon & Cyberpunk Snake Animations
+      - name: Generate 2D Cyberpunk Snake SVG
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#00f3ff&color_dots=#12131a,#050515,#005277,#00a8e8,#00f3ff
 
-      # Push the content of <build_dir> to a branch
-      - name: push github-contribution-grid-snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+      # 2. Generate 3D Interactive Futuristic Snake Graph
+      - name: Generate 3D Futuristic Contribution Graph
+        uses: yoshi38610/github-contribution-grid-snake-3d@v1.0.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Move 3D assets to build output directory
+      - name: Prepare Output Directory
+        run: |
+          mkdir -p dist
+          if [ -d "github-contribution-grid-snake-3d" ]; then
+            mv github-contribution-grid-snake-3d/* dist/ || true
+          fi
+
+      # 4. Deploy all generated assets to the 'output' branch
+      - name: Deploy Assets to Output Branch
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist

@@ -54,19 +54,19 @@
 
 # 📊 GitHub Statistics
 
-<div align="center">
+# 📊 GitHub Statistics
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=sunilkumar0004&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
+<p align="center">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=sunilkumar0004&show_icons=true&theme=cyberpunk&hide_border=true&bg_color=0d1117" alt="Sunil's GitHub Stats" />
+</p>
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sunilkumar0004&layout=compact&theme=tokyonight&hide_border=true"/>
+<p align="center">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sunilkumar0004&layout=compact&theme=cyberpunk&hide_border=true&bg_color=0d1117" alt="Most Used Languages" />
+</p>
 
-</div>
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=sunilkumar0004&theme=tokyonight&hide_border=true"/>
-
-</div>
+<p align="center">
+  <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sunilkumar0004&theme=cyberpunk&hide_border=true&background=0d1117" alt="GitHub Streak" />
+</p>
 
 ---
 

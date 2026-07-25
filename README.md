@@ -54,8 +54,6 @@
 
 # 📊 GitHub Statistics
 
-# 📊 GitHub Statistics
-
 <p align="center">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=sunilkumar0004&show_icons=true&theme=cyberpunk&hide_border=true&bg_color=0d1117" alt="Sunil's GitHub Stats" />
 </p>

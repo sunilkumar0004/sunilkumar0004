@@ -155,7 +155,7 @@
 
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/sunilkumar0004/sunilkumar0004/output/github-contribution-grid-snake.svg"/>
+<img src="https://raw.githubusercontent.com/sunilkumar0004/sunilkumar0004/output/snake.svg" alt = " contribution snake"/>
 
 </p>
 
